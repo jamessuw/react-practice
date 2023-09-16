@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { useState } from "react";
 
+
+
+
 /*================= mapping rendering data =======================*/
 
 function App() {
@@ -40,6 +43,8 @@ const handleChange = (event) => {
   showText(event.target.value);
 };
 
+const [counter, setCounter] = useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -57,12 +62,24 @@ const handleChange = (event) => {
           {show && <span>test shown</span>}
         </div>
 
-        <h2> 2 wyas data Binding</h2>
+        <h2> 2 ways data Binding</h2>
 
         <div className="test3">
           <input type="text" onChange={handleChange} value={text}></input>
     <p>type:{text}</p>
         </div>
+
+
+<h2>counter button</h2>
+<div className="test4">
+  <button onClick={() => {setCounter(counter +1)}}>Counter +1</button>
+ <p>{counter}</p>
+</div>
+
+
+
+
+
 
         <a
           className="App-link"
