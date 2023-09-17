@@ -1,10 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 /*================= mapping rendering data =======================*/
 
 function App() {
+
+
   const item = [
     {
       name: "james",
@@ -61,7 +63,7 @@ function App() {
     }
     const filteredValues = list.filter(
     (itemn) => 
-    
+
     String(item).toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
 
     );
@@ -70,6 +72,12 @@ function App() {
 
     };
 
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      // Update the document title using the browser API
+      document.title = `You clicked ${count} times`;
+    });
 
 
 
@@ -97,7 +105,7 @@ function App() {
           <p>type:{text}</p>
         </div>
 
-        <h2>counter button</h2>
+        <h2>counter button</h2> <p>{counter}</p>
         <div className="test4">
           <button
             onClick={() => {
@@ -106,7 +114,7 @@ function App() {
           >
             Counter +1
           </button>
-          <p>{counter}</p>
+         
         </div>
 
 
@@ -123,6 +131,15 @@ function App() {
 
 
             </div>
+
+            <div>
+
+              <h2> count using useEffect</h2>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
 
  
 
