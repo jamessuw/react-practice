@@ -62,7 +62,8 @@ function App() {
     const filteredValues = list.filter(
     (itemn) => 
     
-    item.toLowerCase ().indexOf(event.target.value.toLowerCase()) !==-1
+    String(item).toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
+
     );
 
     setFilterList(filteredValues);
