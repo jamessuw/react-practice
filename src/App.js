@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState,useEffect } from "react";
+import Form from "./Components/Form/Form.jsx";
 
 /*================= mapping rendering data =======================*/
 
@@ -140,6 +141,14 @@ function App() {
         Click me
       </button>
     </div>
+
+
+    <h2>To do Task list</h2>
+    <div className="test6"> 
+    
+    <Form/>
+    </div>
+  
 
  
 
