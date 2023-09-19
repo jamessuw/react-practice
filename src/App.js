@@ -1,13 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./Components/Form/Form.jsx";
 
 /*================= mapping rendering data =======================*/
 
 function App() {
-
-
   const item = [
     {
       name: "james",
@@ -35,7 +33,6 @@ function App() {
 
   const [show, setShow] = useState(true);
 
-
   const [text, showText] = useState("");
 
   const handleChange = (event) => {
@@ -47,46 +44,38 @@ function App() {
   const [counter, setCounter] = useState(0);
 
   /*================ array Filter ==============================*/
-  const list = [
+  const list = ["banna", "grape", "apple", "pear", "orange"];
 
-    "banna", "grape", "apple", "pear","orange" 
+  const [filterList, setFilterList] = useState(list);
 
-  ];
-
-  const [filterList, setFilterList] = useState (list);
-
-  const handleSearch = (event) =>{
-    if (event.target.value ===  "" ){
+  const handleSearch = (event) => {
+    if (event.target.value === "") {
       setFilterList(list);
 
       return;
-
     }
     const filteredValues = list.filter(
-    (itemn) => 
-
-    String(item).toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
-
+      (itemn) =>
+        String(item).toLowerCase().indexOf(event.target.value.toLowerCase()) !==
+        -1
     );
 
     setFilterList(filteredValues);
+  };
 
-    };
+  const [count, setCount] = useState(0);
 
-    const [count, setCount] = useState(0);
+  useEffect(() => {
+    // Update the document title using the browser API
+    document.title = `You clicked ${count} times`;
+  });
 
-    useEffect(() => {
-      // Update the document title using the browser API
-      document.title = `You clicked ${count} times`;
-    });
-
-//*===============for Loops ======================*//
-const numbers = [1, 2, 3, 4, 5];
-for (let i = 0; i < numbers.length; i++) {
-  console.log(numbers[i]);
-}
-//*============== loops ======================*//
-
+  //*===============for Loops ======================*//
+  const numbers = [1, 2, 3, 4, 5];
+  for (let i = 0; i < numbers.length; i++) {
+    console.log(numbers[i]);
+  }
+  //*============== loops ======================*//
 
   return (
     <div className="App">
@@ -94,7 +83,6 @@ for (let i = 0; i < numbers.length; i++) {
         <h1>Start Practice</h1>
         <h2>Array map</h2>
         <div className="test">{myList}</div>
-
         <h2>show and hide</h2>
         <div className="test2">
           <button onClick={() => setShow(!show)}>
@@ -104,14 +92,11 @@ for (let i = 0; i < numbers.length; i++) {
 
           {show && <span>test shown</span>}
         </div>
-
         <h2> 2 ways data Binding</h2>
-
         <div className="test3">
           <input type="text" onChange={handleChange} value={text}></input>
           <p>type:{text}</p>
         </div>
-
         <h2>counter button</h2> <p>{counter}</p>
         <div className="test4">
           <button
@@ -121,49 +106,26 @@ for (let i = 0; i < numbers.length; i++) {
           >
             Counter +1
           </button>
-         
         </div>
-
-
-            <h2>Filter ArrAys</h2>
-            <div className="test5">
-              <input type="text" name="query" onChange={handleSearch}></input>
-              {filterList&&
-              filterList.map((item, index)=>(
-                <div key={index}>{item}</div>
-
-
-              ))
-              }
-
-
-            </div>
-
-            <div>
-
-              <h2> count using useEffect</h2>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
-    </div>
-
-
-    <h2>To do Task list</h2>
-    <div className="test6"> 
-    
-    <Form/>
-    </div>
-  
-<h2> For Loops</h2>
-<div className="test7">
-<span>{numbers}</span>
-
-
-</div>
- 
-
-
+        <h2>Filter ArrAys</h2>
+        <div className="test5">
+          <input type="text" name="query" onChange={handleSearch}></input>
+          {filterList &&
+            filterList.map((item, index) => <div key={index}>{item}</div>)}
+        </div>
+        <div>
+          <h2> count using useEffect</h2>
+          <p>You clicked {count} times</p>
+          <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+        <h2>To do Task list</h2>
+        <div className="test6">
+          <Form />
+        </div>
+        <h2> For Loops</h2>
+        <div className="test7">
+          <span>{numbers}</span>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
