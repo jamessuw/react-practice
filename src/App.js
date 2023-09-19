@@ -80,6 +80,12 @@ function App() {
       document.title = `You clicked ${count} times`;
     });
 
+//*===============for Loops ======================*//
+const numbers = [1, 2, 3, 4, 5];
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+//*============== loops ======================*//
 
 
   return (
@@ -149,7 +155,12 @@ function App() {
     <Form/>
     </div>
   
+<h2> For Loops</h2>
+<div className="test7">
+<span>{numbers}</span>
 
+
+</div>
  
 
 
