@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Form from "./Components/Form/Form.jsx";
-
+import Grade from "./Components/Grade/Grade";
 /*================= mapping rendering data =======================*/
 
 function App() {
@@ -88,8 +88,7 @@ for (let i=60; i<grade.length; i++){
 
   //*============== loops ======================*//
 
-
-
+  //* ============ Score scanner ============*//
 
   return (
     <div className="App">
@@ -158,6 +157,14 @@ for (let i=60; i<grade.length; i++){
 
         </div>
         
+        <div>
+Grade calculator
+<div>
+  
+  <Grade/>
+</div>
+
+        </div>
         
         
         <a
