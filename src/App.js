@@ -75,7 +75,21 @@ function App() {
   for (let i = 0; i < numbers.length; i++) {
     console.log(numbers[i]);
   }
+
+const names =[ 'James', 'Whissely', 'Vivi', 'Fiona']
+for(let i=0; i<names.lenght; i++) {
+  console.log(names[i])
+}
+const grade =[ 100, 90, 80, 70, 60, 50, 40,30,20,10 ]
+const Score =[100, 90, 80, 70, 60]
+for (let i=60; i<grade.length; i++){
+  if ( Score %  i >60  ) return false;
+}
+
   //*============== loops ======================*//
+
+
+
 
   return (
     <div className="App">
@@ -126,6 +140,26 @@ function App() {
         <div className="test7">
           <span>{numbers}</span>
         </div>
+        
+        
+        <div>
+          For loops again
+            <div className="test8">
+              {names.join (",")}
+            </div>
+
+        </div>
+              
+        <div>
+          For loops again
+            <div className="test8">
+              {grade.join (",")}
+            </div>
+
+        </div>
+        
+        
+        
         <a
           className="App-link"
           href="https://reactjs.org"
