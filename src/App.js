@@ -3,6 +3,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Form from "./Components/Form/Form.jsx";
 import Grade from "./Components/Grade/Grade";
+import Binary from "./Components/Binary/Binary.jsx";
 /*================= mapping rendering data =======================*/
 
 function App() {
@@ -175,7 +176,13 @@ Grade calculator
         >
           Learn React
         </a>
+
+        <div>
+          <Binary/>
+        </div>
       </header>
+
+
     </div>
   );
 }
